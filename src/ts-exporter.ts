@@ -305,7 +305,9 @@ class Converter {
     }
 
     apiRelations.forEach(rel => {
-        imports.push(`import { ${rel.interfaceName} } from './${rel.contentType}';`);
+        // imports.push(`import { ${rel.interfaceName} } from './${rel.contentType}';`);
+        // Fix model definitions
+          imports.push(toImportDefinition(rel.contentType))
       }
     )
 
